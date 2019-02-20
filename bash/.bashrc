@@ -39,7 +39,8 @@ alias ll='ls -all'
 # source "/usr/bin/virtualenvwrapper.sh"
 export HISTCONTROL=erasedups
 export HISTTIMEFORMAT="%h %d %H:%M:%S "
-export HISTSIZE=10000
+export HISTSIZE=
+export HISTFILESIZE=
 # https://askubuntu.com/questions/67283/is-it-possible-to-make-writing-to-bash-history-immediate
 shopt -s histappend
 PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
@@ -63,3 +64,5 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 
 eval "$(pyenv virtualenv-init -)"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
